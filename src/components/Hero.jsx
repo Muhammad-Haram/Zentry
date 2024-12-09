@@ -7,16 +7,11 @@ const Hero = () => {
     const [loadedVideos, setLoadingVideos] = useState(0)
 
     const totalVideos = 4;
-    const nextRef = useRef(null);
-
+    const nextVideoRef = useRef(null);
 
     const handleMiniVdClick = () => {
         setHasClicked(true)
-
         setCurrentIndex((prevIndex) => prevIndex + 1);
-
-
-
     }
 
     return (
@@ -26,7 +21,7 @@ const Hero = () => {
                     <div className='mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg bg-black'>
 
                         <div onClick={handleMiniVdClick} className='origin-center'>
-                            miniVideo
+                            <video ref={nextVideoRef} />
                         </div>
 
                     </div>
